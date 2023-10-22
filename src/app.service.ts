@@ -8,13 +8,16 @@ export class AppService {
   ) { }
 
   async getHello() {
-    await this.producerService.produce({
-      topic: 'test1',
-      messages: [
-        {
-          value: 'hello'
-        }
-      ],
+    // await this.producerService.produce({
+    //   topic: 'test1',
+    //   messages: [
+    //     {
+    //       value: 'hello'
+    //     }
+    //   ],
+    // });
+    await this.producerService.produce('test', {
+      value: 'Hello World',
     });
 
     return "Hello from";
