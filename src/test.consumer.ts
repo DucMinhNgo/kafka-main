@@ -9,10 +9,10 @@ export class TestConsumer implements OnModuleInit {
         await this.consumerService.consume({
             topic: { topic: 'test' },
             config: { groupId: 'test-consumer' },
-            onMessage: async (message) => {
+            onMessage: async (message: any) => {
                 try {
                     console.log({
-                        dustin: message.value.toString(),
+                        dustin: JSON.parse(message.value),
                     });
                 } catch (err) {
                     throw new Error('Test error!');

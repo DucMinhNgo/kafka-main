@@ -17,7 +17,10 @@ export class AppService {
     //   ],
     // });
     await this.producerService.produce('test', {
-      value: 'Hello World',
+      value: JSON.stringify({
+        id: '123',
+        name: 'DustinPro'
+      }),
     });
 
     return "Hello from";
